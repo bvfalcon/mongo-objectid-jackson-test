@@ -8,6 +8,10 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 public class Utils
 {
 	private static ObjectMapper objectMapper = new ObjectMapper();
+	static
+	{
+		objectMapper.addMixIn(MongoEntity.class, MongoEntityMixin.class);
+	}
 	
 	private Utils()
 	{
